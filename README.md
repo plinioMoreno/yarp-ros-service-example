@@ -5,7 +5,11 @@ This repository aims to test the generation of yarpidl_rosmsg files for the use-
 To test this repository, the requirements are as follows:
 
 
-YARP
-ycm
-sudo apt install ros-DISTRO-ros-base
-sudo apt install ros-DISTRO-roscpp-tutorials
+* YARP
+*  ycm
+*  sudo apt install ros-DISTRO-ros-base
+*  sudo apt install ros-DISTRO-roscpp-tutorials
+*  sudo apt install ros-DISTRO-rospy-tutorials
+
+
+To verify the
