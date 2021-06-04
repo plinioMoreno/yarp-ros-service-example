@@ -12,20 +12,17 @@ find_package(YARP 3.3.103 COMPONENTS os dev math rosmsg idl_tools REQUIRED)
 yarp_idl_to_dir(INPUT_FILES roscpp_tutorials/TwoInts.srv OUTPUT_DIR ${CMAKE_BINARY_DIR}/msg
                 SOURCES_VAR TwoInts_SOURCES
                 HEADERS_VAR TwoInts_HEADERS
-                INCLUDE_DIRS_VAR TwoInts_INCLUDES
-                ROSMSG_WITH_ROS)
+                INCLUDE_DIRS_VAR TwoInts_INCLUDES)
 
 yarp_idl_to_dir(INPUT_FILES rospy_tutorials/HeaderString.msg OUTPUT_DIR ${CMAKE_BINARY_DIR}/msg
                 SOURCES_VAR HeaderString_SOURCES
                 HEADERS_VAR HeaderString_HEADERS
-                INCLUDE_DIRS_VAR HeaderString_INCLUDES
-                ROSMSG_WITH_ROS)
+                INCLUDE_DIRS_VAR HeaderString_INCLUDES)
 
 yarp_idl_to_dir(INPUT_FILES tf2_msgs/FrameGraph.srv OUTPUT_DIR ${CMAKE_BINARY_DIR}/msg
                 SOURCES_VAR FrameGraph_SOURCES
                 HEADERS_VAR FrameGraph_HEADERS
-                INCLUDE_DIRS_VAR FrameGraph_INCLUDES
-                ROSMSG_WITH_ROS)
+                INCLUDE_DIRS_VAR FrameGraph_INCLUDES)
 
 include_directories(${CMAKE_BINARY_DIR}/msg)
 add_executable(add_int_server_v1b)
