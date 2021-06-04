@@ -9,12 +9,14 @@
 #include <yarp/os/LogComponent.h>
 #include <yarp/os/Network.h>
 #include <yarp/os/RpcClient.h>
+#include <yarp/os/Node.h>
 
 #include <yarp/rosmsg/roscpp_tutorials/TwoInts.h>
 #include <yarp/rosmsg/roscpp_tutorials/TwoIntsReply.h>
 
 using yarp::os::Network;
 using yarp::os::RpcClient;
+using yarp::os::Node;
 
 namespace {
 YARP_LOG_COMPONENT(CLIENT_V1B, "yarp.example.ros.add_int_client_v1b")
@@ -28,11 +30,12 @@ int main(int argc, char* argv[])
     }
 
     Network yarp;
+    Node node("/yarp_add_int_client");
     RpcClient client;
     yarp::rosmsg::roscpp_tutorials::TwoInts example;
     client.promiseType(example.getType());
 
-    if (!client.open("/add_two_ints@/yarp_add_int_client")) {
+    if (!client.open("add_two_ints")) {
         yCError(CLIENT_V1B, "Failed to open port");
         return 1;
     }
